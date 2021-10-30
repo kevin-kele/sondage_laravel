@@ -189,32 +189,32 @@
                     <div class="col-md-4 mb-2">
                         <label for="validationCustom02">Quel casque envisagez vous d’acheter dans un futur proche ?</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="marque" id="marque1" value="Occulus Quest"  required>
-                            <label class="form-check-label" for="marque1">
+                            <input class="form-check-input" type="radio" name="casque" id="casque1" value="Occulus Quest"  required>
+                            <label class="form-check-label" for="casque1">
                             Occulus Quest
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="marque" id="marque2" value="Occulus Go" required>
-                            <label class="form-check-label" for="marque2">
+                            <input class="form-check-input" type="radio" name="casque" id="casque2" value="Occulus Go" required>
+                            <label class="form-check-label" for="casque2">
                             Occulus Go
                             </label>
                         </div>
                         <div class="form-check disabled">
-                            <input class="form-check-input" type="radio" name="marque" id="marque3" value="HTC Vive Pro" required>
-                            <label class="form-check-label" for="marque3">
+                            <input class="form-check-input" type="radio" name="casque" id="casque3" value="HTC Vive Pro" required>
+                            <label class="form-check-label" for="casque3">
                             HTC Vive Pro
                             </label>
                         </div>
                         <div class="form-check disabled">
-                            <input class="form-check-input" type="radio" name="marque" id="marque3" value="Autre" required>
-                            <label class="form-check-label" for="marque3">
+                            <input class="form-check-input" type="radio" name="casque" id="casque3" value="Autre" required>
+                            <label class="form-check-label" for="casque3">
                             Autre
                             </label>
                         </div>
                         <div class="form-check disabled">
-                            <input class="form-check-input" type="radio" name="marque" id="marque3" value="Aucun" required>
-                            <label class="form-check-label" for="marque3">
+                            <input class="form-check-input" type="radio" name="casque" id="casque3" value="Aucun" required>
+                            <label class="form-check-label" for="casque3">
                             Aucun
                             </label>
                         </div>

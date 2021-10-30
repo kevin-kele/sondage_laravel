@@ -15,30 +15,33 @@ class QuestionnaireController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function Add(Request $request){
-        questionnaire::insert([
-            'email',
-            'age',
-            'sexe',
-            'NbFoyer',
-            'profession',
-            'casque',
-            'magasin',
-            'marque',
-            'nb_utilise_vr',
-            'utilisations',
-            'qualite',
-            'confort',
-            'connection',
-            'qualite_graph',
-            'qualiteAudio',
-            'notifications',
-            'invitation_session',
-            'enregistrement',
-            'jeux_exclusifs',
-            'nouvelle_fonctionnalite',
-            'visitor'=>request()->ip(),
-            'created_at'=>Carbon::now()
-        ]);
+
+        $questionnaire = new questionnaire;
+        $questionnaire->email=$request->email;
+        $questionnaire->age=$request->age;
+        $questionnaire->sexe=$request->sexe;
+        $questionnaire->nb_Foyer=$request->nb_Foyer;
+        $questionnaire->profession=$request->profession;
+        $questionnaire->casque=$request->casque;
+        $questionnaire->magasin=$request->magasin;
+        $questionnaire->marque=$request->marque;
+        $questionnaire->utilisations=$request->utilisations;
+        $questionnaire->nb_utilise_vr=$request->nb_utilise_vr;
+        $questionnaire->qualite=$request->qualite;
+        $questionnaire->confort=$request->confort;
+        $questionnaire->connection=$request->connection;
+        $questionnaire->qualite_graph=$request->qualite_graph;
+        $questionnaire->qualiteAudio=$request->qualiteAudio;
+        $questionnaire->notifications=$request->notifications;
+        $questionnaire->invitation_session=$request->invitation_session;
+        $questionnaire->enregistrement=$request->enregistrement;
+        $questionnaire->jeux_exclusifs=$request->jeux_exclusifs;
+        $questionnaire->visitor=$request->ip();
+        $questionnaire->nouvelle_fonctionnalite=$request->nouvelle_fonctionnalite;
+
+        $questionnaire->save();
+
+
         return redirect()->back()->with('success','Category inserted successfull !');
     }
 

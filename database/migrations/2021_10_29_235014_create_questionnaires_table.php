@@ -15,7 +15,7 @@ class CreateQuestionnairesTable extends Migration
     {
         Schema::create('questionnaires', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->references('id')->on('users');
+            // $table->integer('user_id')->references('id')->on('users');
             $table->string('email',255)->unique();
             $table->string('age');
             $table->string('sexe');
