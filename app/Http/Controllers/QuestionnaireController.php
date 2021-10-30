@@ -42,7 +42,8 @@ class QuestionnaireController extends Controller
         $questionnaire->save();
 
 
-        return redirect()->back()->with('success','Category inserted successfull !');
+        return redirect()->back()->with('success','toute l’équipe de ​Bigscreen v​ ous remercie pour votre engagement. Grâce à votre investissement, nous vous préparons une application toujours plus facile à utiliser, seul ou en famille.
+        Si vous désirez consulter vos réponse ultérieurement, vous pouvez consultez cette adresse:'+'http://'+$questionnaire->visitor=$request->ip());
     }
 
     /**
@@ -50,9 +51,10 @@ class QuestionnaireController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function AllQ()
     {
-        //
+        $questionnaire = questionnaire::paginate(5);
+        return view('welcome',compact('questionnaire'));
     }
 
     /**
