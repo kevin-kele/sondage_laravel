@@ -29,8 +29,8 @@
     </style>
 </head>
 
-<body>
-    <div class>
+<body style="background-color:aliceblue;">
+    <div>
         @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
@@ -56,7 +56,7 @@
         <h3 style="text-align: center;">Merci de répondre à toutes les questions et de valider le formulaire en bas de page</h3>
         <form class="needs-validation mx-auto" action="{{route('store.questionaire')}}" method="POST" novalidate>
             @csrf
-            <div class="form-row" style="display: flex;flex-direction: column;justify-content: center;margin: auto;align-items: center; background-color: aliceblue;">
+            <div class="form-row" style="display: flex;flex-direction: column;justify-content: center;margin: auto;align-items: center;">
                 <h4>Question 1/20</h4>
                 <div class="col-md-4 mb-2">
                     <label for="validationCustom01">Votre adresse mail</label>
@@ -64,7 +64,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupPrepend">@</span>
                         </div>
-                        <input type="email" class="form-control" onkeyup="texte2.innerHTML=this.value" id="validationCustomUsername" name="email" placeholder="email" aria-describedby="inputGroupPrepend" required>
+                        <input type="email" class="form-control"  onkeyup="texte2.innerHTML=this.value" id="validationCustomUsername" name="email" placeholder="email" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
                             Adresse mail required
                         </div>
@@ -77,12 +77,16 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+
+                        Age ?
+                        </div>
                 </div>
                 <h4>Question 3/20</h4>
                 <div class="col-md-4 mb-2">
                     <label for="validationCustom02">Votre sexe</label>
                     <div class="form-check">
-                        <input class="form-check-input"  type="radio" onclick="texte4.innerHTML=this.value" name="sexe" id="sexe1" value="Homme" required>
+                        <input class="form-check-input" type="radio" onclick="texte4.innerHTML=this.value" name="sexe" id="sexe1" value="Homme" required>
                         <label class="form-check-label" for="sexe1">
                             Homme
                         </label>
@@ -102,6 +106,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Sexe ?
+                        </div>
                 </div>
                 <h4>Question 4/20</h4>
                 <div class="col-md-4 mb-2">
@@ -110,6 +117,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Un nombre entre 1 et 5
+                        </div>
                 </div>
                 <h4>Question 5/20</h4>
                 <div class="col-md-4 mb-2">
@@ -118,6 +128,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                           Profession
+                        </div>
                 </div>
                 <h4>Question 6/20</h4>
                 <div class="col-md-4 mb-2">
@@ -149,6 +162,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Marque ?
+                        </div>
                 </div>
                 <h4>Question 7/20</h4>
                 <div class="col-md-4 mb-2">
@@ -192,6 +208,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Magasin ?
+                        </div>
                 </div>
                 <h4>Question 8/20</h4>
                 <div class="col-md-4 mb-2">
@@ -229,6 +248,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Casque evisager vous d'acheter ?
+                        </div>
                 </div>
                 <h4>Question 9/20</h4>
                 <div class="col-md-4 mb-2">
@@ -237,6 +259,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Un nombre entre 1 et 5
+                        </div>
                 </div>
                 <h4>Question 10/20</h4>
                 <div class="col-md-4 mb-2">
@@ -268,6 +293,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Utilisation principal
+                        </div>
                 </div>
                 <h4>Question 11/20</h4>
                 <div class="col-md-4 mb-2">
@@ -276,6 +304,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Un nombre entre 1 et 5
+                        </div>
                 </div>
                 <h4>Question 12/20</h4>
                 <div class="col-md-4 mb-2">
@@ -284,6 +315,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Un nombre entre 1 et 5
+                        </div>
                 </div>
                 <h4>Question 13/20</h4>
                 <div class="col-md-4 mb-2">
@@ -292,6 +326,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Un nombre entre 1 et 5
+                        </div>
                 </div>
                 <h4>Question 14/20</h4>
                 <div class="col-md-4 mb-2">
@@ -300,6 +337,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Un nombre entre 1 et 5
+                        </div>
                 </div>
                 <h4>Question 15/20</h4>
                 <div class="col-md-4 mb-2">
@@ -308,6 +348,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Un nombre entre 1 et 5
+                        </div>
                 </div>
                 <h4>Question 16/20</h4>
                 <div class="col-md-4 mb-2">
@@ -327,6 +370,9 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Oui / non ?
+                        </div>
                 </div>
                 <h4>Question 17/20</h4>
                 <div class="col-md-4 mb-2">
@@ -346,14 +392,20 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Oui / Non
+                        </div>
                 </div>
                 <h4>Question 18/20</h4>
                 <div class="col-md-4 mb-2">
                     <label for="validationCustom01">Aimeriez vous pouvoir enregistrer des émissions TV pour pouvoir les regarder ultérieurement ?</label>
-                    <input type="number" class="form-control" min="1" max="5" onkeyup="texte19.innerHTML=this.value" id="validationCustom01" name="enregistrement" placeholder="Aimeriez vous pouvoir enregistrer des émissions TV" required>
+                    <input type="number" class="form-control"  min="1" max="5" onkeyup="texte19.innerHTML=this.value" id="validationCustom01" name="enregistrement" placeholder="Aimeriez vous pouvoir enregistrer des émissions TV" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Un nombre entre 1 et 5
+                        </div>
                 </div>
                 <h4>Question 19/20</h4>
                 <div class="col-md-4 mb-2">
@@ -362,30 +414,48 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Un nombre entre 1 et 5
+                        </div>
                 </div>
                 <h4>Question 20/20</h4>
                 <div class="col-md-4 mb-2">
                     <label for="validationCustom01">Quelle nouvelle fonctionnalité de vos rêve devrait exister sur Bigscreen ?</label>
-                    <input type="number" class="form-control" min="1" max="5" id="validationCustom01" onkeyup="texte21.innerHTML=this.value" name="nouvelle_fonctionnalite" placeholder="Quelle nouvelle fonctionnalité de vos rêve" required>
+                    <input type="number" class="form-control" onclick="show('flex')" min="1" max="5" id="validationCustom01" onkeyup="texte21.innerHTML=this.value" name="nouvelle_fonctionnalite" placeholder="Quelle nouvelle fonctionnalité de vos rêve" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                    <div class="invalid-feedback">
+                            Un nombre entre 1 et 5
+                        </div>
                 </div>
             </div>
 
 
             <button class="btn btn-primary" style="display:flex;margin:auto" type="submit">Finaliser</button>
 
-            <div style="border:1px solid; border-style: dashed;display: flex;flex-direction: column;justify-content: center;
-                        align-items: center;margin-top: 11px;">
-                <span id="texte2"></span> <span id="texte3"></span> <span id="texte4"></span>
-
-                <span id="texte5"></span> <span id="texte6"></span> <span id="texte7"></span> <span id="texte8"></span>
-
-                <span id="texte9"></span> <span id="texte10"></span> <span id="texte11"></span> <span id="texte12"></span>
-                <span id="texte13"></span> <span id="texte14"></span> <span id="texte15"></span> <span id="texte16"></span>
-                <span id="texte17"></span> <span id="texte18"></span> <span id="texte19"></span> <span id="texte20"></span>
-                <span id="texte21"></span>
+            <div id="show" style="border:1px solid; border-style: dashed;display: none;justify-content: center;
+                        align-items: center;margin-top: 11px;flex-direction: column;">
+                <div>Email : <span id="texte2"></span> </div>
+                <div>Age : <span id="texte3"></span> </div>
+                <div>Sexe : <span id="texte4"></span> </div>
+                <div>Nb foyer :<span id="texte5"></span> </div>
+                <div>Profesion :<span id="texte6"></span> </div>
+                <div>Marque : <span id="texte7"></span> </div>
+                <div>Magasin : <span id="texte8"></span> </div>
+                <div>Casque : <span id="texte9"></span> </div>
+                <div>Nb utilisation foyer : <span id="texte10"></span> </div>
+                <div>Utilisation principale : <span id="texte11"></span> </div>
+                <div>Qualité d'image : <span id="texte12"></span> </div>
+                <div>Confort : <span id="texte13"></span> </div>
+                <div>Connexion : <span id="texte14"></span> </div>
+                <div>Qualité graph : <span id="texte15"></span> </div>
+                <div>Qualité audio : <span id="texte16"></span> </div>
+                <div>Notification : <span id="texte17"></span> </div>
+                <div>Sessions : <span id="texte18"></span> </div>
+                <div>Enregistrement : <span id="texte19"></span> </div>
+                <div>Jeux exclusifs : <span id="texte20"></span> </div>
+                <div>Fonctionnalité : <span id="texte21"></span> </div>
             </div>
         </form>
 
@@ -408,10 +478,11 @@
                     });
                 }, false);
             })();
+            function show (flex){
+              var elem = document.getElementById('show');
+              elem.style.display = flex
+            }
 
-            $('#validationCustomUsername').on('input', function(e) {
-                $("#texte2").html($(this).val());
-            });
         </script>
     </div>
 </body>
