@@ -28,3 +28,5 @@ Route::get('/sondage/all',[QuestionnaireController::class,'AllQ'])->name('all.qu
 Route::get('redirects','App\Http\Controllers\HomeController@index');
 
 Route::post('/sondage/add',[QuestionnaireController::class,'Add'])->name('store.questionaire');
+
+Route::get('/sondage/{questionnaire}',[QuestionnaireController::class,'show'])->name('show.questionaire');

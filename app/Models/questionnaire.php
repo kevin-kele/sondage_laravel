@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Http\Traits\Hashidable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class questionnaire extends Model
 {
+    use Hashidable;
     use HasFactory;
     protected $fillable = [
         'email',

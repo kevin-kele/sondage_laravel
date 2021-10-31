@@ -46,12 +46,12 @@
 
     <div class="container">
         @if(session('success'))
-        @if(session('urlIp'))
+
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>{{session('success')}} {{session('urlIp')}}</strong>
+            <strong>{{session('success')}}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        @endif
+
         @endif
         <h3 style="text-align: center;">Merci de répondre à toutes les questions et de valider le formulaire en bas de page</h3>
         <form class="needs-validation mx-auto" action="{{route('store.questionaire')}}" method="POST" novalidate>
