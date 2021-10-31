@@ -82,7 +82,7 @@
                 <div class="col-md-4 mb-2">
                     <label for="validationCustom02">Votre sexe</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" onclick="texte4.innerHTML=this.value" name="sexe" id="sexe1" value="Homme" required>
+                        <input class="form-check-input"  type="radio" onclick="texte4.innerHTML=this.value" name="sexe" id="sexe1" value="Homme" required>
                         <label class="form-check-label" for="sexe1">
                             Homme
                         </label>

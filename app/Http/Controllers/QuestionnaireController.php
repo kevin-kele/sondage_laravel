@@ -42,8 +42,8 @@ class QuestionnaireController extends Controller
         $questionnaire->save();
 
 
-        return redirect()->back()->with('success','toute l’équipe de ​Bigscreen v​ ous remercie pour votre engagement. Grâce à votre investissement, nous vous préparons une application toujours plus facile à utiliser, seul ou en famille.
-        Si vous désirez consulter vos réponse ultérieurement, vous pouvez consultez cette adresse:' . route('show.questionaire', ['questionnaire' => $questionnaire]));
+        return redirect()->back()->with('success','toute l’équipe de ​Bigscreen v​ous remercie pour votre engagement. Grâce à votre investissement, nous vous préparons une application toujours plus facile à utiliser, seul ou en famille.
+        Si vous désirez consulter vos réponse ultérieurement, vous pouvez consultez cette adresse:'.' '. route('show.questionaire', ['questionnaire' => $questionnaire]));
     }
 
     /**
@@ -76,7 +76,8 @@ class QuestionnaireController extends Controller
      */
     public function show(questionnaire $questionnaire)
     {
-        dd($questionnaire);
+        $sondage = $questionnaire;
+        return view('singleSondage',compact('sondage'));
     }
 
     /**
