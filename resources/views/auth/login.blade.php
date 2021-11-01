@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+          <h1 style="font-size: 76px;font-weight: bolder;font-variant-caps: all-small-caps;">Bigscreen </h1>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
