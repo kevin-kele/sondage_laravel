@@ -25,7 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[AdminControll
 
 Route::get('/sondage/all',[QuestionnaireController::class,'AllQ'])->name('all.questionaire');
 
-Route::get('redirects','App\Http\Controllers\HomeController@index');
+// Route::get('redirects','App\Http\Controllers\HomeController@index');
 
 Route::post('/sondage/add',[QuestionnaireController::class,'Add'])->name('store.questionaire');
 

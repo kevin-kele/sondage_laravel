@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            statistiques du sondage
         </h2>
     </x-slot>
 
@@ -13,7 +13,7 @@
                         <h5 class="card-header text-white bg-info">Marque de casque Vr</h5>
                         <div class="card-body">
 
-                            <div id="piechart" style="width: auto; height: 500px;"></div>
+                            <div id="piechart" style="height: 560px;"></div>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     <div class="card">
                         <h5 class="card-header text-white bg-success">Magasin d’application</h5>
                         <div class="card-body">
-                            <div id="piechart2" style="width: auto; height: 500px;"></div>
+                            <div id="piechart2" style="height: 560px;"></div>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="card">
                         <h5 class="card-header text-white bg-danger">Utilisations Bigscreen</h5>
                         <div class="card-body">
-                            <div id="piechart3" style="width: auto; height: 500px;"></div>
+                            <div id="piechart3" style="height: 560px;"></div>
                         </div>
                     </div>
                 </div>
@@ -104,40 +104,98 @@
     </script>
 
     <script>
+        var conf = JSON.parse('{!! json_encode($confort) !!}');
+        var conf2 = JSON.parse('{!! json_encode($qualite) !!}');
+        var conf3 = JSON.parse('{!! json_encode($connection) !!}');
+        var conf4 = JSON.parse('{!! json_encode($qualite_graph) !!}');
+        var conf5 = JSON.parse('{!! json_encode($qualiteAudio) !!}');
+        re = [];
+        re2 = [];
+        re3 = [];
+        re4 = [];
+        re5 = [];
+        conf.forEach(el => {
+            re.push(el.confort)
+        //    console.log(re)
+       });
+       conf2.forEach(e => {
+        re2.push(e.qualite)
+        //    console.log(re)
+       });
+       conf3.forEach(k => {
+        re3.push(k.connection)
+        //    console.log(re)
+       });
+       conf4.forEach(l => {
+        re4.push(l.qualite_graph)
+        //    console.log(re)
+       });
+       conf5.forEach(o => {
+        re5.push(o.qualiteAudio)
+        //    console.log(re)
+       });
         const ctx = document.getElementById('myChart');
         const myChart = new Chart(ctx, {
             type: 'radar',
             data: {
                 labels: [
-                    'Eating',
-                    'Drinking',
-                    'Sleeping',
-                    'Designing',
-                    'Coding',
-                    'Cycling',
-                    'Running'
+                    'Qualite',
+                    'Confort',
+                    'Conection',
+                    'Qualite graph',
+                    'Qualite audio',
                 ],
                 datasets: [{
-                    label: 'My First Dataset',
-                    data: [65, 59, 90, 81, 56, 55, 40],
+                    label: 'confort',
+                    data: re,
                     fill: true,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    pointBackgroundColor: 'rgb(255, 99, 132)',
+
+                    borderColor: 'rgb(25, 199, 232)',
+                    pointBackgroundColor: 'rgb(25, 199, 232)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
                     pointHoverBorderColor: 'rgb(255, 99, 132)'
                 }, {
-                    label: 'My Second Dataset',
-                    data: [28, 48, 40, 19, 96, 27, 100],
+                    label: 'qualite',
+                    data: re2,
                     fill: true,
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgb(54, 162, 235)',
-                    pointBackgroundColor: 'rgb(54, 162, 235)',
+
+                    borderColor: 'rgb(5, 2, 235)',
+                    pointBackgroundColor: 'rgb(5, 2, 235)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
                     pointHoverBorderColor: 'rgb(54, 162, 235)'
-                }]
+                }, {
+                    label: 'connection',
+                    data: re3,
+                    fill: true,
+                    borderColor: 'rgb(189,183,107)',
+                    pointBackgroundColor: 'rgb(189,183,107)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(189,183,107)'
+                },
+                {
+                    label: 'qualite graph',
+                    data: re4,
+                    fill: true,
+                    borderColor: 'rgb(54, 162, 235)',
+                    pointBackgroundColor: 'rgb(153,50,204)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(153,50,204)'
+                },
+                {
+                    label: 'qualite audio',
+                    data: re5,
+                    fill: true,
+                    borderColor: 'rgb(128,0,0)',
+                    pointBackgroundColor: 'rgb(128,0,0)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(128,0,0)'
+                }
+            ]
             }
         });
     </script>

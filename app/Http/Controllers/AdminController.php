@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use LengthException;
 use Illuminate\Http\Request;
 use App\Models\questionnaire;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -56,33 +58,13 @@ class AdminController extends Controller
         $arr3 = ($chartData3);
 
 
-        $data4 = questionnaire::select('id', 'qualite')->get()->groupBy(function($data4){
-            return $data4->qualite;
-        });
-        $qualites = '';
-        $nbQualite = 0;
-        foreach ($data4 as $qualite => $values) {
-            $qualites = $qualite;
-            $nbQualite = count($values);
 
-        };
+        $data4  = DB::table('questionnaires')->select('qualite')->get();
 
-        // dd($data5);
-        // dd($data4);
-
-        $conforts = '';
-
-        $nbConfort = 0;
-
-     $data5 = questionnaire::select('id', 'confort')->get()->groupBy(function($data5){
-            return $data5->confort;
-        });
-        foreach ($data5 as $confort => $values) {
-            $conforts = $confort;
-            $nbConfort = count($values);
-        };
-
-        dd($nbConfort);
+        $data5  = DB::table('questionnaires')->select('confort')->get();
+        $data6  = DB::table('questionnaires')->select('connection')->get();
+        $data7  = DB::table('questionnaires')->select('qualite_graph')->get();
+        $data8  = DB::table('questionnaires')->select('qualiteAudio')->get();
 
 
 
@@ -91,7 +73,12 @@ class AdminController extends Controller
         return view('dashboard', [
             'chartData' => $arr,
             'chartData2' => $arr2,
-            'chartDataU' => $arr3
+            'chartDataU' => $arr3,
+            'confort'=>$data5,
+            'qualite'=>$data4,
+            'connection'=>$data6,
+            'qualite_graph'=>$data7,
+            'qualiteAudio'=>$data8
         ]);
     }
 }
