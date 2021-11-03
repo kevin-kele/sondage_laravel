@@ -114,26 +114,29 @@
         re3 = [];
         re4 = [];
         re5 = [];
+        ref=[];
+        r=[];
         conf.forEach(el => {
             re.push(el.confort)
-        //    console.log(re)
        });
        conf2.forEach(e => {
         re2.push(e.qualite)
-        //    console.log(re)
        });
        conf3.forEach(k => {
         re3.push(k.connection)
-        //    console.log(re)
        });
        conf4.forEach(l => {
         re4.push(l.qualite_graph)
-        //    console.log(re)
        });
        conf5.forEach(o => {
         re5.push(o.qualiteAudio)
-        //    console.log(re)
        });
+    //    ref.push(re,re2,re3,re4,re5);
+
+    //    ref.forEach(z=>{
+    //         r = z
+    //    })
+       console.log(r);
         const ctx = document.getElementById('myChart');
         const myChart = new Chart(ctx, {
             type: 'radar',

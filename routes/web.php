@@ -21,12 +21,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[AdminController::class,'index'])->name('dashboard');
+
 
 Route::get('/sondage/all',[QuestionnaireController::class,'AllQ'])->name('all.questionaire');
-
-// Route::get('redirects','App\Http\Controllers\HomeController@index');
 
 Route::post('/sondage/add',[QuestionnaireController::class,'Add'])->name('store.questionaire');
 
 Route::get('/sondage/{questionnaire}',[QuestionnaireController::class,'show'])->name('show.questionaire');
+
+// Admin route
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[AdminController::class,'index'])->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/questionnaire',[AdminController::class,'AllQues'])->name('dashboard.questionaire');

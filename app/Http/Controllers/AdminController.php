@@ -81,4 +81,8 @@ class AdminController extends Controller
             'qualiteAudio'=>$data8
         ]);
     }
+
+    public function AllQues(){
+        return view('admin.dashboard');
+    }
 }
