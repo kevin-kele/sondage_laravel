@@ -37,3 +37,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[AdminControll
 Route::middleware(['auth:sanctum', 'verified'])->get('/question',[AdminController::class,'getAll'])->name('dashboard.question');
 
 Route::middleware(['auth:sanctum', 'verified'])->post('/question/add',[AdminController::class,'addQuestion'])->name('store.question');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/response/all',[AdminController::class,'allResponse'])->name('show.response');

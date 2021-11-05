@@ -84,8 +84,20 @@ class AdminController extends Controller
     }
 
     public function getAll(){
-        $questions = questions::paginate(5);
+        $questions = questions::all();
         return view('admin.dashboard',compact('questions'));
+    }
+
+    public function allResponse(){
+        $response = 'kevin';
+        $numero  = DB::table('questions')->select('numero')->get();
+        $questions = questions::all();
+        $questionnaire=questionnaire::paginate(3);
+        return view('admin.response',[
+            'questions'=>$questions,
+            'questionnaire'=>$questionnaire,
+            'numero'=>$numero,
+        ]);
     }
 
     /**

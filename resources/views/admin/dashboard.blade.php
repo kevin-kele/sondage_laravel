@@ -28,7 +28,6 @@
                 </tbody>
                 @endforeach
             </table>
-            {{$questions->links()}}
             <div class="col-md-6 collapse" id="myDIV">
                     <div class="card">
                         <div class="card-header">Ajout question</div>
@@ -75,7 +74,7 @@
 </x-app-layout>
 <script>
   function myFunction() {
-  letx = document.getElementById("myDIV");
+  let x = document.getElementById("myDIV");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
