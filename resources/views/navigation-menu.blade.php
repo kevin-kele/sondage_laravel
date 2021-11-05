@@ -17,7 +17,7 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard.questionaire') }}" :active="request()->routeIs('dashboard.questionaire')">
+                    <x-jet-nav-link href="{{ route('dashboard.question') }}" :active="request()->routeIs('dashboard.question')">
                         Questionaire
                     </x-jet-nav-link>
                 </div>

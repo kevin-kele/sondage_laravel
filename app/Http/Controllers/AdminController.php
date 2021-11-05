@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use LengthException;
 use Illuminate\Http\Request;
 use App\Models\questionnaire;
+use App\Models\questions;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -82,7 +83,25 @@ class AdminController extends Controller
         ]);
     }
 
-    public function AllQues(){
-        return view('admin.dashboard');
+    public function getAll(){
+        $questions = questions::paginate(5);
+        return view('admin.dashboard',compact('questions'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function addQuestion(Request $request){
+        $questions = new questions;
+        $questions->numero=$request->numero;
+        $questions->corps=$request->corps;
+        $questions->type=$request->type;
+
+        $questions->save();
+
+        return redirect()->back()->with('success','question ajouter avec succes');
     }
 }

@@ -32,4 +32,8 @@ Route::get('/sondage/{questionnaire}',[QuestionnaireController::class,'show'])->
 // Admin route
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[AdminController::class,'index'])->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/questionnaire',[AdminController::class,'AllQues'])->name('dashboard.questionaire');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/questionnaire',[AdminController::class,'AllQues'])->name('dashboard.questionaire');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/question',[AdminController::class,'getAll'])->name('dashboard.question');
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/question/add',[AdminController::class,'addQuestion'])->name('store.question');

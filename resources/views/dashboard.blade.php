@@ -13,7 +13,7 @@
                         <h5 class="card-header text-white bg-info">Marque de casque Vr</h5>
                         <div class="card-body">
 
-                            <div id="piechart" style="height: 560px;"></div>
+                            <div id="piechart" style="height: 563px;"></div>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     <div class="card">
                         <h5 class="card-header text-white bg-success">Magasin d’application</h5>
                         <div class="card-body">
-                            <div id="piechart2" style="height: 560px;"></div>
+                            <div id="piechart2" style="height: 563px;"></div>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                     <div class="card">
                         <h5 class="card-header text-white bg-danger">Utilisations Bigscreen</h5>
                         <div class="card-body">
-                            <div id="piechart3" style="height: 560px;"></div>
+                            <div id="piechart3" style="height: 563px;"></div>
                         </div>
                     </div>
                 </div>
