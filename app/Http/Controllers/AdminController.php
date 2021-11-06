@@ -71,7 +71,7 @@ class AdminController extends Controller
 
 
 
-        return view('dashboard', [
+        return view('admin.dashboard', [
             'chartData' => $arr,
             'chartData2' => $arr2,
             'chartDataU' => $arr3,
@@ -85,7 +85,7 @@ class AdminController extends Controller
 
     public function getAll(){
         $questions = questions::all();
-        return view('admin.dashboard',compact('questions'));
+        return view('admin.questionnaires',compact('questions'));
     }
 
     public function allResponse(){

@@ -9,7 +9,7 @@
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             @foreach($questionnaire as $quest)
-            <table class="table">
+            <table class="table table-bordered table-hover table-sm table-responsive">
                 <thead>
                     <tr>
                         <th scope="col">Le numéro de la question</th>
