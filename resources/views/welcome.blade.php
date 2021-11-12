@@ -20,6 +20,12 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
             line-height: 1.5
         }
+        h4{
+            margin: 10px;
+        }
+        label{
+            margin-bottom: 5px;
+        }
     </style>
 
     <style>
@@ -53,13 +59,14 @@
         </div>
 
         @endif
+        <h1 style="font-size: 70px;font-weight: bolder;text-align:center;margin-bottom:30px;">Bigscreen </h1>
         <h3 style="text-align: center;">Merci de répondre à toutes les questions et de valider le formulaire en bas de page</h3>
         <form class="needs-validation mx-auto" action="{{route('store.questionaire')}}" method="POST" novalidate>
             @csrf
             <div class="form-row" style="display: flex;flex-direction: column;justify-content: center;margin: auto;align-items: center;">
                 <h4>Question 1/20</h4>
                 <div class="col-md-4 mb-2">
-                    <label for="validationCustom01">Votre adresse mail</label>
+                    <label for="validationCustom01">Votre adresse mail ?</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupPrepend">@</span>
@@ -72,7 +79,7 @@
                 </div>
                 <h4>Question 2/20</h4>
                 <div class="col-md-4 mb-2">
-                    <label for="validationCustom01">Votre age</label>
+                    <label for="validationCustom01">Votre age ?</label>
                     <input type="text" class="form-control" id="validationCustom01" onkeyup="texte3.innerHTML=this.value" name="age" placeholder="votre age" required>
                     <div class="valid-feedback">
                         Looks good!
@@ -84,7 +91,7 @@
                 </div>
                 <h4>Question 3/20</h4>
                 <div class="col-md-4 mb-2">
-                    <label for="validationCustom02">Votre sexe</label>
+                    <label for="validationCustom02">Votre sexe ?</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" onclick="texte4.innerHTML=this.value" name="sexe" id="sexe1" value="Homme" required>
                         <label class="form-check-label" for="sexe1">
@@ -123,7 +130,7 @@
                 </div>
                 <h4>Question 5/20</h4>
                 <div class="col-md-4 mb-2">
-                    <label for="validationCustom01">Votre profession</label>
+                    <label for="validationCustom01">Votre profession ?</label>
                     <input type="text" class="form-control" id="validationCustom01" onkeyup="texte6.innerHTML=this.value" name="profession" placeholder="Votre profession" required>
                     <div class="valid-feedback">
                         Looks good!

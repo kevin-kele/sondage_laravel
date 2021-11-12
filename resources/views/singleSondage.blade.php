@@ -1,3 +1,16 @@
+<style>
+        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+input{
+    background-color: #FFD700;
+}
+h1{
+    font-size: 40px;
+}
+h4{
+    font-size: 20px;
+}
+    </style>
 <form>
   <fieldset disabled>
        <div class="form-row" style="display: flex;flex-direction: column;justify-content: center;">

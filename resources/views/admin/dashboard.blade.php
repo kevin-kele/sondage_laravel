@@ -104,6 +104,7 @@
     </script>
 
     <script>
+
         var conf = JSON.parse('{!! json_encode($confort) !!}');
         var conf2 = JSON.parse('{!! json_encode($qualite) !!}');
         var conf3 = JSON.parse('{!! json_encode($connection) !!}');
@@ -119,6 +120,7 @@
         conf.forEach(el => {
             re.push(el.confort)
        });
+       console.log(conf2)
        conf2.forEach(e => {
         re2.push(e.qualite)
        });
@@ -131,6 +133,17 @@
        conf5.forEach(o => {
         re5.push(o.qualiteAudio)
        });
+       re = re.reduce(function(acc, val) { return acc + val; }, 0);
+       re2 = re2.reduce(function(acc, val) { return acc + val; }, 0);
+
+       re3 = re3.reduce(function(acc, val) { return acc + val; }, 0);
+
+       re4 = re4.reduce(function(acc, val) { return acc + val; }, 0);
+
+       re5 = re5.reduce(function(acc, val) { return acc + val; }, 0);
+
+       console.log(re2)
+    //    console.log()
     //    ref.push(re,re2,re3,re4,re5);
 
     //    ref.forEach(z=>{
@@ -149,8 +162,8 @@
                     'Qualite audio',
                 ],
                 datasets: [{
-                    label: 'confort',
-                    data: re,
+                    label: 'statistique total',
+                    data: [re,re2,re3,re4,re5],
                     fill: true,
 
                     borderColor: 'rgb(25, 199, 232)',
@@ -158,46 +171,48 @@
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
                     pointHoverBorderColor: 'rgb(255, 99, 132)'
-                }, {
-                    label: 'qualite',
-                    data: re2,
-                    fill: true,
+                },
+                //  {
+                //     label: 'qualite',
+                //     data: re2,
+                //     fill: true,
 
-                    borderColor: 'rgb(5, 2, 235)',
-                    pointBackgroundColor: 'rgb(5, 2, 235)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(54, 162, 235)'
-                }, {
-                    label: 'connection',
-                    data: re3,
-                    fill: true,
-                    borderColor: 'rgb(189,183,107)',
-                    pointBackgroundColor: 'rgb(189,183,107)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(189,183,107)'
-                },
-                {
-                    label: 'qualite graph',
-                    data: re4,
-                    fill: true,
-                    borderColor: 'rgb(54, 162, 235)',
-                    pointBackgroundColor: 'rgb(153,50,204)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(153,50,204)'
-                },
-                {
-                    label: 'qualite audio',
-                    data: re5,
-                    fill: true,
-                    borderColor: 'rgb(128,0,0)',
-                    pointBackgroundColor: 'rgb(128,0,0)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(128,0,0)'
-                }
+                //     borderColor: 'rgb(5, 2, 235)',
+                //     pointBackgroundColor: 'rgb(5, 2, 235)',
+                //     pointBorderColor: '#fff',
+                //     pointHoverBackgroundColor: '#fff',
+                //     pointHoverBorderColor: 'rgb(54, 162, 235)'
+                // },
+                //  {
+                //     label: 'connection',
+                //     data: re3,
+                //     fill: true,
+                //     borderColor: 'rgb(189,183,107)',
+                //     pointBackgroundColor: 'rgb(189,183,107)',
+                //     pointBorderColor: '#fff',
+                //     pointHoverBackgroundColor: '#fff',
+                //     pointHoverBorderColor: 'rgb(189,183,107)'
+                // },
+                // {
+                //     label: 'qualite graph',
+                //     data: re4,
+                //     fill: true,
+                //     borderColor: 'rgb(54, 162, 235)',
+                //     pointBackgroundColor: 'rgb(153,50,204)',
+                //     pointBorderColor: '#fff',
+                //     pointHoverBackgroundColor: '#fff',
+                //     pointHoverBorderColor: 'rgb(153,50,204)'
+                // },
+                // {
+                //     label: 'qualite audio',
+                //     data: re5,
+                //     fill: true,
+                //     borderColor: 'rgb(128,0,0)',
+                //     pointBackgroundColor: 'rgb(128,0,0)',
+                //     pointBorderColor: '#fff',
+                //     pointHoverBackgroundColor: '#fff',
+                //     pointHoverBorderColor: 'rgb(128,0,0)'
+                // }
             ]
             }
         });
